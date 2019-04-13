@@ -18,14 +18,39 @@ let beta = (x)=>{
   x.textContent = "BETA";
 }
 
-let gamma = ()=>{};
-let delta = ()=>{};
-let epsilon = ()=>{};
-let zeta = ()=>{};
-let eta = ()=>{};
-let theta = ()=>{};
-let iota = ()=>{};
-let kappa = ()=>{};
+let gamma = (x)=>{
+  x.style.color="red";
+};
+
+let delta = (x)=>{
+  x.style.display="none";
+};
+
+let epsilon = (x)=>{
+  x.style.border="thin dotted red";
+};
+
+let zeta = (x)=>{
+  x.textContent = "zzz";
+};
+
+let eta = (x)=>{
+  x.style.WebkitFilter="grayscale(100%)";
+};
+
+let theta = (x)=>{
+  x.style.fontSize="90px";
+};
+
+let iota = (x)=>{
+  x.previousElementSibling.textContent = "DINOSAURS ARE BIG AND GREEN AND SCARY AND THEY WILL EAT YOUR FOOD I'M WARNING YOU RUN IF YOU SEE A DINOSAUR ON AN ISLAND"
+};
+
+let kappa = (x)=>{
+  let lambdaLogo = document.createElement("img");
+  lambdaLogo.src = 'img/lambda-logo.jpeg'
+  x.previousElementSibling.append(lambdaLogo);
+};
 
 let lambda = ()=>{
   let repeater = [];
@@ -33,7 +58,8 @@ let lambda = ()=>{
     repeater.push( "lAmBdA" );
   }
   repeater=repeater.join("");
-  return repeater;
+  alert("Check the console log!!");
+  console.log(repeater);
 }
 
 const functions = {
@@ -52,6 +78,7 @@ const functions = {
 const functionKeys = Object.keys(functions);
 
 el.forEach((element,idx)=>{
-  element.addEventListener( ev[idx], functions[functionKeys[idx]](element));
+  element.addEventListener( ev[idx], x=>(functions[functionKeys[idx]](element)));
+//  console.log(element, ev[idx]);
 });
-console.log(functionKeys);
+//console.log(functionKeys);
